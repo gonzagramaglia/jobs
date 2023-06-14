@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   userName: {
-    fontFamily: FONT.regular,
+    fontFamily: FONT.medium,
     fontSize: SIZES.large,
-    color: COLORS.secondary,
+    color: COLORS.tertiary,
   },
   welcomeMessage: {
     fontFamily: FONT.bold,
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   searchBtn: {
     width: 50,
     height: "100%",
-    backgroundColor: COLORS.tertiary,
+    backgroundColor: COLORS.secondary,
     borderRadius: SIZES.medium,
     justifyContent: "center",
     alignItems: "center",
