@@ -7,13 +7,19 @@ import { COLORS, SIZES } from '../../../constants';
 import PopularJobCard from '../../common/cards/popular/PopularJobCard';
 import useFetch from '../../../hook/useFetch';
 
+import testData from '../../../testData'
+
 const Popularjobs = () => {
   const router = useRouter();
 
-  const { data, isLoading, error } = useFetch('search', {
-    query: 'React developer',
-    num_pages: '1'
-  })
+  const isLoading = false;
+  const error = false;
+  const data = testData
+
+  // const { data, isLoading, error } = useFetch('search', {
+  //   query: 'React developer',
+  //   num_pages: '1'
+  // })
 
   console.log(data)
 
@@ -30,7 +36,7 @@ const Popularjobs = () => {
           : error
             ? <Text>Something went wrong</Text>
             : <FlatList 
-                data={[1, 2, 3, 4]} 
+                data={data} 
                 renderItem={ ({ item }) => (
                   <PopularJobCard
                     item={item}
