@@ -8,7 +8,7 @@ import useFetch from "../../hook/useFetch";
 
 import testData from "../../testData";
 
-const tabs = [ "About", "Qualifications", "Responsabilities" ]
+const tabs = [ "About", "Qualifications", "Responsibilities" ]
 
 const JobDetails = () => {
     const params = useSearchParams();
@@ -31,8 +31,14 @@ const JobDetails = () => {
                             points={data[0].job_highlights?.qualifications ??  ['N/A']}
                         />
             
-            case "Responsabilities":
-                return  
+            case "Responsibilities":
+                return  <Specifics 
+                            title="Responsibilities"
+                            points={data[0].job_highlights?.responsibilities ??  ['N/A']}
+                        />
+
+            default:
+                break
         }
     }
 
