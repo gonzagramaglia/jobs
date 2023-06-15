@@ -21,10 +21,7 @@ const JobDetails = () => {
     const displayTabContent = () => {
         switch (activeTab) {
             case "About":
-                return  <Specifics 
-                            title="About"
-                            points={data[0].job_highlights?.about ??  ['N/A']}
-                        />
+                return  
 
             case "Qualifications":
                 return  <Specifics 
@@ -33,10 +30,7 @@ const JobDetails = () => {
                         />
             
             case "Responsabilities":
-                return  <Specifics 
-                            title="Responsabilities"
-                            points={data[0].job_highlights?.responsabilities ??  ['N/A']}
-                        />
+                return  
         }
     }
 
