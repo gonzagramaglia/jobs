@@ -18,6 +18,28 @@ const JobDetails = () => {
 
     const onRefresh = () => {}
 
+    const displayTabContent = () => {
+        switch (activeTab) {
+            case "About":
+                return  <Specifics 
+                            title="About"
+                            points={data[0].job_highlights?.about ??  ['N/A']}
+                        />
+
+            case "Qualifications":
+                return  <Specifics 
+                            title="Qualifications"
+                            points={data[0].job_highlights?.qualifications ??  ['N/A']}
+                        />
+            
+            case "Responsabilities":
+                return  <Specifics 
+                            title="Responsabilities"
+                            points={data[0].job_highlights?.responsabilities ??  ['N/A']}
+                        />
+        }
+    }
+
     const isLoading = false;
     const data = testData;
     const error = false;
@@ -72,6 +94,8 @@ const JobDetails = () => {
                                             activeTab={activeTab}
                                             setActiveTab={setActiveTab}
                                         />
+
+                                        {displayTabContent()}
                                     </View>
                                   ) 
                     }
