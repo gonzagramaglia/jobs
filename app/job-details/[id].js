@@ -8,10 +8,13 @@ import useFetch from "../../hook/useFetch";
 
 import testData from "../../testData";
 
+const tabs = [ "About", "Qualifications", "Responsabilities" ]
+
 const JobDetails = () => {
     const params = useSearchParams();
     const router = useRouter();
     const [refreshing, setRefreshing] = useState(false);
+    const [activeTab, setActiveTab] = useState(tabs[0])
 
     const onRefresh = () => {}
 
@@ -65,7 +68,9 @@ const JobDetails = () => {
                                         />
 
                                         <JobTabs 
-                                        
+                                            tabs={tabs}
+                                            activeTab={activeTab}
+                                            setActiveTab={setActiveTab}
                                         />
                                     </View>
                                   ) 
